@@ -12,6 +12,7 @@ namespace ProductsApp
             // Web API configuration and services
 
             // Web API routes
+            // This is the default router or the base router
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
