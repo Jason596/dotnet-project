@@ -12,11 +12,15 @@ namespace ProductsApp.Controllers
     {
         // is this an array? is this the way how to create mutiple objects.
         Product[] products = new Product[]
-{
+        {
             new Product { Id = 1, Name = "Tomato Soup", Category = "Groceries", Price = 1 },
             new Product { Id = 2, Name = "Yo-yo", Category = "Toys", Price = 3.75M },
-            new Product { Id = 3, Name = "Hammer", Category = "Hardware", Price = 16.99M }
-};
+            new Product { Id = 3, Name = "Hammer", Category = "Hardware", Price = 16.99M },
+            
+        };
+
+        List<Product> products1 = new List<Product>();
+
 
         public IEnumerable<Product> GetAllProducts()
         {
@@ -25,7 +29,13 @@ namespace ProductsApp.Controllers
 
         public IHttpActionResult GetProduct(int id)
         {
-            var product = products.FirstOrDefault((p) => p.Id == id);
+            // What is this ? Linq?
+           var product = products.FirstOrDefault((p) => p.Id == id);
+
+
+           
+
+
             if (product == null)
             {
                 return NotFound();
